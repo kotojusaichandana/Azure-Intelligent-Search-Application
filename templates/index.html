@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Intelligent Search</title>
+</head>
+<body>
+
+<h2>AI Intelligent Search Application</h2>
+
+<form action="/search" method="get">
+    <input type="text" name="q" placeholder="Enter your search query" required>
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+
+{% if results %}
+    <h3>Search Results:</h3>
+    <ul>
+        {% for row in results %}
+            <li>
+                <strong>Title:</strong> {{ row.title }} <br>
+                <strong>Content:</strong> {{ row.content }} <br>
+                <strong>Department:</strong> {{ row.department }} <br>
+                <strong>Score:</strong> {{ "%.2f"|format(row.score) }}
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+</body>
+</html>
