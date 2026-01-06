@@ -31,24 +31,26 @@ def home():
 # -------------------------------
 @app.route("/search")
 def search():
-    query = request.args.get("q")
+    query = request.args.get("q", "").strip().lower()
 
     if not query:
         return render_template("index.html")
 
-    query_vector = vectorizer.transform([query])
-    similarity_scores = cosine_similarity(query_vector, tfidf_matrix)[0]
-
-    data["score"] = similarity_scores
-
-    results = data[data["score"] > 0].sort_values(
-        by="score", ascending=False
-    ).head(5)
+    # STRICT TITLE-ONLY SEARCH
+    results = data[
+        data["title"].str.lower().str.split().apply(
+            lambda words: query in words
+        )
+    ]
 
     return render_template(
         "index.html",
-        results=results.to_dict(orient="records")
+        results=results.to_dict(orient="records"),
+        query=query
     )
+
+
+
 
 # -------------------------------
 # Run Flask App
