@@ -1,33 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>AI Intelligent Search</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a4aef;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #4a4aef;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #3737c9;
+        }
+
+        .results-title {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .card {
+            background: #f9f9f9;
+            border-left: 6px solid #4a4aef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        .card h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .score {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #4a4aef;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>AI Intelligent Search Application</h2>
+<div class="container">
+    <h1>AI Intelligent Search</h1>
+    <p class="subtitle">
+        Smart document retrieval for employees using AI & Machine Learning
+    </p>
 
-<form action="/search" method="get">
-    <input type="text" name="q" placeholder="Enter your search query" required>
-    <button type="submit">Search</button>
-</form>
+    <form action="/search" method="get">
+        <input type="text" name="q" placeholder="Search policies, salary, training, security..." required>
+        <button type="submit">Search</button>
+    </form>
 
-<hr>
+    {% if results %}
+        <h2 class="results-title">Search Results</h2>
 
-{% if results %}
-    <h3>Search Results:</h3>
-    <ul>
         {% for row in results %}
-            <li>
-                <strong>Title:</strong> {{ row.title }} <br>
-                <strong>Content:</strong> {{ row.content }} <br>
-                <strong>Department:</strong> {{ row.department }} <br>
-                <strong>Score:</strong> {{ "%.2f"|format(row.score) }}
-            </li>
-            <hr>
+            <div class="card">
+                <h3>{{ row.title }}</h3>
+                <p>{{ row.content }}</p>
+                <div class="meta">Department: {{ row.department }}</div>
+                {% if row.score is defined %}
+                    <div class="score">Relevance Score: {{ "%.2f"|format(row.score) }}</div>
+                {% endif %}
+            </div>
         {% endfor %}
-    </ul>
-{% endif %}
+    {% endif %}
+
+    <footer>
+        © 2026 | Azure AI Intelligent Search Application
+    </footer>
+</div>
 
 </body>
 </html>
+
