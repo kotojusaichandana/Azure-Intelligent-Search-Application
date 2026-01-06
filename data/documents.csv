@@ -1,6 +1,37 @@
 id,title,content,department
-1,Leave Policy,Employees are entitled to 20 paid leaves per year,HR
-2,Health Insurance,Company provides health insurance coverage,HR
-3,Python Coding Standards,Follow PEP8 coding guidelines,IT
-4,Cloud Security Policy,Security standards for cloud usage,IT
-5,Payroll Process,Monthly payroll is processed on last working day,Finance
+1,Leave Policy,Employees are entitled to 20 paid leaves per year including casual sick and earned leave,HR
+2,Attendance Policy,Employees must mark daily attendance using company attendance system,HR
+3,Work From Home Policy,Employees can apply for work from home with manager approval,HR
+4,Health Insurance Policy,Company provides health insurance coverage for employees and dependents,HR
+5,Employee Code of Conduct,Employees must follow company ethics professionalism and behavior rules,HR
+6,Onboarding Process,New employees complete onboarding training documentation and orientation,HR
+7,Training Policy,Employees receive regular technical and soft skills training programs,HR
+8,Performance Appraisal Policy,Employee performance appraisal is conducted annually based on targets,HR
+9,Promotion Policy,Employees are promoted based on performance skills and experience,HR
+10,Resignation Policy,Employees must submit resignation and serve notice period,HR
+
+11,Payroll Process,Monthly payroll is processed on the last working day of every month,Finance
+12,Salary Structure,Employee salary includes basic pay allowances incentives and deductions,Finance
+13,Tax Deduction Policy,Tax is deducted from salary as per government income tax rules,Finance
+14,Reimbursement Policy,Employees can claim reimbursement for travel food and office expenses,Finance
+15,Bonus Policy,Employees receive bonus based on company and individual performance,Finance
+
+16,IT Usage Policy,Employees must use company IT systems responsibly,IT
+17,Password Policy,Employees must follow strong password rules for system security,IT
+18,Data Privacy Policy,Company protects employee and client data privacy,IT
+19,Software Installation Policy,Only authorized software is allowed on company computers,IT
+20,Python Coding Standards,Developers must follow PEP8 coding standards in Python programs,IT
+21,Version Control Policy,Projects must use GitHub for version control and collaboration,IT
+22,AI Usage Guidelines,Artificial Intelligence tools must be used ethically and responsibly,IT
+
+23,Cloud Usage Policy,Employees must follow cloud usage rules while using Azure services,Cloud
+24,Cloud Security Policy,Cloud security standards ensure safe usage of data and applications,Cloud
+25,Azure Deployment Process,Applications are deployed on Microsoft Azure following standards,Cloud
+26,Data Backup Policy,Regular data backup is mandatory to prevent data loss,Cloud
+27,Disaster Recovery Policy,Disaster recovery ensures business continuity during failures,Cloud
+
+28,Project Management Process,Projects follow SDLC agile methodology and documentation,Management
+29,Quality Assurance Process,Quality assurance ensures proper testing and bug free software,Management
+30,Risk Management Policy,Risk management identifies and reduces project risks,Management
+31,Client Communication Guidelines,Clear communication ensures client satisfaction and success,Management
+32,Internal Audit Policy,Regular audits ensure compliance with company policies,Management
