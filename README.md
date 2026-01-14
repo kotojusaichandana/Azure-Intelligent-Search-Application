@@ -94,7 +94,7 @@ Step 3: Open in Browser
 
 Open your web browser and go to:
 
-http://127.0.0.1:5000
+ http://127.0.0.1:5000
 
 🔍 How the Application Works
 
@@ -159,4 +159,5 @@ Pandas Documentation: https://pandas.pydata.org
 Name: KOTOJU SAI CHANDANA
 Admission Number: 23CSE1004
 Department: Computer Science and Engineering
-University: CHAITANYA DEEMED TO BE UNIVERSITY
+
+University: CHAITANYA DEEMED TO BE UNIVERSITY 
